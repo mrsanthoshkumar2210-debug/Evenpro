@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EventPro - Event Management</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Event<span>Pro</span></div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>We Make Your Events <span>Unforgettable</span></h1>
+
+            <p>
+                Professional event planning and management for weddings,
+                birthdays, corporate events, conferences and more.
+            </p>
+
+            <a href="#events" class="btn">Explore Events</a>
+            <a href="#contact" class="btn secondary-btn">Book Now</a>
+        </div>
+    </section>
+
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+
+        <div class="section-title">
+            <h2>Our Events</h2>
+            <p>Choose the perfect event for your special occasion.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button onclick="filterEvents('all')">All</button>
+            <button onclick="filterEvents('wedding')">Wedding</button>
+            <button onclick="filterEvents('birthday')">Birthday</button>
+            <button onclick="filterEvents('corporate')">Corporate</button>
+            <button onclick="filterEvents('conference')">Conference</button>
+        </div>
+
+
+        <div class="event-container">
+
+            <!-- Wedding -->
+            <div class="event-card" data-category="wedding">
+                <div class="event-icon">💍</div>
+
+                <div class="event-content">
+                    <h3>Wedding Event</h3>
+
+                    <p>
+                        A beautiful and memorable wedding celebration
+                        planned according to your requirements.
+                    </p>
+
+                    <h4>Activities Included:</h4>
+
+                    <ul>
+                        <li>💐 Wedding Decoration</li>
+                        <li>🎵 DJ & Music</li>
+                        <li>📸 Photography</li>
+                        <li>🍽️ Catering</li>
+                        <li>💡 Lighting</li>
+                        <li>🎤 Stage Management</li>
+                    </ul>
+
+                    <div class="price">₹75,000</div>
+
+                    <button class="book-btn"
+                        onclick="selectEvent('Wedding Event', 75000)">
+                        Book Event
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Birthday -->
+            <div class="event-card" data-category="birthday">
+                <div class="event-icon">🎂</div>
+
+                <div class="event-content">
+                    <h3>Birthday Party</h3>
+
+                    <p>
+                        Fun-filled birthday celebrations for children,
+                        teenagers and adults.
+                    </p>
+
+                    <h4>Activities Included:</h4>
+
+                    <ul>
+                        <li>🎈 Balloon Decoration</li>
+                        <li>🎂 Birthday Cake</li>
+                        <li>🎵 Music & DJ</li>
+                        <li>🎁 Games & Gifts</li>
+                        <li>📸 Photography</li>
+                        <li>🎉 Party Entertainment</li>
+                    </ul>
+
+                    <div class="price">₹25,000</div>
+
+                    <button class="book-btn"
+                        onclick="selectEvent('Birthday Party', 25000)">
+                        Book Event
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Corporate -->
+            <div class="event-card" data-category="corporate">
+                <div class="event-icon">💼</div>
+
+                <div class="event-content">
+                    <h3>Corporate Event</h3>
+
+                    <p>
+                        Professional corporate events for companies,
+                        employees and business partners.
+                    </p>
+
+                    <h4>Activities Included:</h4>
+
+                    <ul>
+                        <li>🏢 Venue Arrangement</li>
+                        <li>🎤 Professional Host</li>
+                        <li>📊 Presentation Setup</li>
+                        <li>🍽️ Corporate Catering</li>
+                        <li>🎥 Video Recording</li>
+                        <li>🏆 Award Ceremony</li>
+                    </ul>
+
+                    <div class="price">₹50,000</div>
+
+                    <button class="book-btn"
+                        onclick="selectEvent('Corporate Event', 50000)">
+                        Book Event
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Conference -->
+            <div class="event-card" data-category="conference">
+                <div class="event-icon">🎤</div>
+
+                <div class="event-content">
+                    <h3>Conference</h3>
+
+                    <p>
+                        Complete conference management for educational,
+                        professional and business gatherings.
+                    </p>
+
+                    <h4>Activities Included:</h4>
+
+                    <ul>
+                        <li>🎤 Stage & Sound System</li>
+                        <li>📽️ Projector Setup</li>
+                        <li>💺 Seating Arrangement</li>
+                        <li>🍴 Food & Refreshments</li>
+                        <li>📝 Registration Desk</li>
+                        <li>👨‍💼 Guest Management</li>
+                    </ul>
+
+                    <div class="price">₹60,000</div>
+
+                    <button class="book-btn"
+                        onclick="selectEvent('Conference', 60000)">
+                        Book Event
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="services-section">
+
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Everything you need for a successful event.</p>
+        </div>
+
+        <div class="services">
+
+            <div class="service">
+                <div>🎨</div>
+                <h3>Decoration</h3>
+                <p>
+                    Creative decorations designed according to your
+                    event theme.
+                </p>
+            </div>
+
+            <div class="service">
+                <div>🍽️</div>
+                <h3>Catering</h3>
+                <p>
+                    Delicious food and refreshments for your guests.
+                </p>
+            </div>
+
+            <div class="service">
+                <div>📸</div>
+                <h3>Photography</h3>
+                <p>
+                    Professional photography and video coverage.
+                </p>
+            </div>
+
+            <div class="service">
+                <div>🎵</div>
+                <h3>Music & DJ</h3>
+                <p>
+                    Music, DJ and entertainment to keep your guests engaged.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+
+        <div class="section-title">
+            <h2>Event Packages</h2>
+            <p>Select a package according to your requirements.</p>
+        </div>
+
+        <div class="pricing-container">
+
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <div class="package-price">₹20,000</div>
+
+                <p>Suitable for small events.</p>
+
+                <ul>
+                    <li>✓ Basic Decoration</li>
+                    <li>✓ Music System</li>
+                    <li>✓ Basic Catering</li>
+                    <li>✓ Event Coordinator</li>
+                </ul>
+
+                <button onclick="selectPackage('Basic Package', 20000)">
+                    Choose Package
+                </button>
+            </div>
+
+
+            <div class="pricing-card popular">
+                <span class="popular-label">POPULAR</span>
+
+                <h3>Premium</h3>
+                <div class="package-price">₹50,000</div>
+
+                <p>Perfect for medium-sized events.</p>
+
+                <ul>
+                    <li>✓ Premium Decoration</li>
+                    <li>✓ DJ & Music</li>
+                    <li>✓ Catering</li>
+                    <li>✓ Photography</li>
+                    <li>✓ Event Coordinator</li>
+                </ul>
+
+                <button onclick="selectPackage('Premium Package', 50000)">
+                    Choose Package
+                </button>
+            </div>
+
+
+            <div class="pricing-card">
+                <h3>Luxury</h3>
+                <div class="package-price">₹1,00,000</div>
+
+                <p>Complete luxury event management.</p>
+
+                <ul>
+                    <li>✓ Luxury Decoration</li>
+                    <li>✓ Professional DJ</li>
+                    <li>✓ Premium Catering</li>
+                    <li>✓ Photography & Video</li>
+                    <li>✓ Guest Management</li>
+                    <li>✓ Full Event Planning</li>
+                </ul>
+
+                <button onclick="selectPackage('Luxury Package', 100000)">
+                    Choose Package
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Booking Section -->
+    <section id="contact" class="booking-section">
+
+        <div class="section-title">
+            <h2>Book Your Event</h2>
+            <p>Fill in your details and our team will contact you.</p>
+        </div>
+
+        <form id="bookingForm">
+
+            <div class="form-group">
+                <label>Your Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter phone number"
+                    required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Select Event</label>
+
+                <select id="eventType" required>
+                    <option value="">Choose Event</option>
+                    <option value="Wedding Event">Wedding Event</option>
+                    <option value="Birthday Party">Birthday Party</option>
+                    <option value="Corporate Event">Corporate Event</option>
+                    <option value="Conference">Conference</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>Event Date</label>
+
+                <input
+                    type="date"
+                    id="eventDate"
+                    required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Number of Guests</label>
+
+                <input
+                    type="number"
+                    id="guests"
+                    placeholder="Number of guests"
+                    min="1"
+                    required>
+            </div>
+
+
+            <div class="selected-event">
+                <strong>Selected Event:</strong>
+
+                <span id="selectedEvent">
+                    No event selected
+                </span>
+
+                <br>
+
+                <strong>Estimated Price:</strong>
+
+                <span id="selectedPrice">
+                    ₹0
+                </span>
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+                Submit Booking
+            </button>
+            
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>Event<span>Pro</span></h2>
+
+            <p>
+                Making your special moments unforgettable.
+            </p>
+
+            <p>
+                📞 +91 98765 43210
+                &nbsp; | &nbsp;
+                ✉️ info@eventpro.com
+            </p>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 EventPro. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
